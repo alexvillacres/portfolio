@@ -1,0 +1,56 @@
+---
+title: 'Beyond Webflow: Choosing the Slower Path'
+author: 'Alex Villacres'
+layout: ../../layouts/BlogLayout.astro
+description: 'This is the first post of my new Astro blog.'
+tags: ["webflow", "astro", "inconvenience"]
+---
+
+# Beyond Webflow: Choosing the Slower Path
+Two years ago, one particular weekend my girlfriend and I we’re keen on hitting the design-gym to get our Figma reps in, as designers do.
+
+So, instead of defaulting to the typical Saturday night that folks in their mid-20’s would get into; unintelligible bar conversations over blaring EDM. We decided to keep the party on the living room floor and focus on one thing: Design <span class="parens">(and a little house music)</span>.
+
+This tradition, unbeknownst to us at the time, would be known as “design days”. Where we set a goal to complete a design-related goal and imbibed until we achieved it.
+
+Our first “design day” would not only be a catalyst for her blossoming freelance illustration career, but also reignited my taste for improvement and disciplined work.
+
+After a multitude of hours of overthinking, countless iterations, and quite a few white claws later, it happened: we shipped the working website.
+
+Noticed how I described it? Working. Not beautiful, but working. Because that’s **all that it was**.
+
+Initially, my girlfriend was enthusiastic about this 'working' website. But within a few months it felt stale and, like so many other portfolios, sat untouched for two years.
+
+Fast forward to today, Maya had an exciting new prospect and wanted to revamp the portfolio. Only this time, I wanted to do something different.
+
+The easy route would be to spin up a new project in Webflow and go on autopilot. But the energy on this particular “design day” inspired me to do something different. Instead of clicking through Webflow’s UI, I wanted to clack away in an IDE.
+
+So I decided to move away from Webflow, where it previously resided, and build it from scratch <span class="parens">(with a little help from Astro)</span>.
+
+What I found was my Webflow skills did, in fact, transfer to the basics of creating static websites. But more than that, the feeling of making changes to the actual code, managing versions via git, and running builds felt *raw* and *true* to the craft that is development. It was **analog**.
+
+Hours go by, furiously tabbing back and forth between Figma and Cursor, while the kicks and snares of Moodyman keep us in stride. Early morning, the next day around 02:00, we would finally hit “publish”.
+
+Of course, it was *slower*. I had to troll through the documentation. I learned about the importance of version control—something Webflow’s lack thereof hadn’t taught me. I began to understand when and when **not** to use components, and why they are so powerful.
+
+What I realized is this: I needed *slower*.
+
+Let’s put it this way... Webflow’s value proposition is clear:
+
+- Speed of development
+- Low barrier to entry
+- Built-in hosting & maintenance
+
+Webflow makes website maintenance and creation fast and **convenient**.
+
+Whilst convenience and speed is powerful, I’d argue that if you want to understand and create something meaningful, human even, choosing a slow, perhaps inconvenient path could be best.
+
+Oliver Burkeman, the author of Four Thousand Weeks, paints this picture clearly, as he describes the scenario of a hand-written birthday card versus using a mailer service to print and send the card for you:
+
+“...It really isn’t the thought that counts, but the effort—which is to say the inconvenience. When you render the process convenient, you drain it of its meaning.”
+
+Now, I don’t want to sit here and chastise folks who want to build and ship quickly. But if you’ve made it a habit to default to the easier more convenient route, you might be belittling the meaning of that experience and the output that comes of it.
+
+In my case, choosing to go ‘analog’ with the build was not the quickest or most efficient decision. But slowing down allowed me to be curious, take on the beginner-mindset, and let nuance guide me down an incredible experience.
+
+I encourage you to do the same. Take a process in your life or career and do it differently, you might see something you never saw before.

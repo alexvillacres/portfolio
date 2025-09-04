@@ -1,0 +1,372 @@
+@import "tailwindcss";
+
+@theme {
+    --font-roobert: 'Roobert', sans-serif;
+    --font-mono: "Geist Mono","Menlo","DejaVu Sans Mono","Consolas","Inconsolata",monospace;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-style-normal: normal;
+    --font-style-italic: italic;
+    --font-display-swap: swap;
+
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 96rem;
+    --breakpoint-xs: 32rem;
+    --breakpoint-max-layout-width: 89rem;
+
+    --spacing: .25rem;
+    --prose-spacing: 1rem;
+    --text-xs: .8125rem;
+    --text-xs--line-height: 1.25rem;
+    --text-sm: .875rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base: 1rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl: 1.3125rem;
+    --text-xl--line-height: 1.625rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: 1.25;
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: 1.2;
+    --tracking-wide: .025em;
+    --tracking-wider: .05em;
+    --radius-sm: .25rem;
+    --radius-md: .375rem;
+    --radius-lg: .5rem;
+    --radius-xl: .75rem;
+    --ease-out: cubic-bezier(0,0,.2,1);
+    --ease-in-out: cubic-bezier(.4,0,.2,1);
+    --animate-spin: spin 1s linear infinite;
+    --default-transition-duration: .15s;
+    --default-transition-timing-function: cubic-bezier(.4,0,.2,1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --breakpoint-max-layout-width: 89rem;
+    --color-white: white;
+    --color-black: black;
+    --color-gray-50: oklch(98% .001 264);
+    --color-gray-75: oklch(97% .0013 264);
+    --color-gray-100: oklch(12% .038 264/.05);
+    --color-gray-200: oklch(12% .036 264/.07);
+    --color-gray-300: oklch(12% .034 264/.17);
+    --color-gray-400: oklch(12% .032 264/.38);
+    --color-gray-500: oklch(12% .03 264/.5);
+    --color-gray-600: oklch(12% .028 264/.67);
+    --color-gray-700: oklch(12% .024 264/.77);
+    --color-gray-800: oklch(12% .02 264/.85);
+    --color-gray-900: oklch(12% .02 264/.9);
+    --color-gray-950: oklch(12% .02 264/.95);
+    --color-blue-800: var(--color-blue);
+    --color-red-800: var(--color-red);
+    --color-content: white;
+    --color-background: var(--color-white);
+    --color-foreground: var(--color-gray-900);
+    --color-popup: white;
+    --color-gridline: oklch(91.6% .004 264);
+    --color-selection: oklch(80% .2 264/.25);
+    --color-highlight: var(--color-blue);
+    --color-line-highlight: oklch(80% .2 264/.1);
+    --color-line-highlight-strong: oklch(80% .2 264/.25);
+    --color-inline-highlight: oklch(80% .2 264/.15);
+    --color-gray: var(--color-gray-600);
+    --color-navy: oklch(31% .1 264);
+    --color-blue: oklch(45% .2 264);
+    --color-green: oklch(46% .12 150);
+    --color-violet: oklch(40% .24 300);
+    --color-red: oklch(50% .22 31);
+    --text-xs--letter-spacing: .001em;
+    --text-sm--letter-spacing: .016em;
+    --text-md: .9375rem;
+    --text-md--line-height: 1.375rem;
+    --text-md--letter-spacing: .016em;
+    --text-base--letter-spacing: 0em;
+    --text-lg--letter-spacing: -.0025em;
+    --text-xl--letter-spacing: -.005em;
+    --text-2xl--letter-spacing: -.0125em;
+    --text-3xl--letter-spacing: -.015em;
+    --ease-out-fast: cubic-bezier(.45,1.005,0,1.005);
+    --ease-in-slow: cubic-bezier(.375,.015,.545,.455);
+
+    --color-shout: var(--color-gray-950);
+    --color-loud: var(--color-gray-700);
+    --color-base: var(--color-gray-500);
+    --color-muted: var(--color-gray-400);
+    --color-faint: var(--color-gray-300);
+    --color-prose: oklch(12% .03 264/.6);
+
+    --list-inset: 24px;
+    --text-prose: 1.0625rem;
+    --text-prose--line-height: 1.65em;
+}
+
+@layer base {
+    html {
+        color-scheme: light dark;
+        word-break: break-word;
+        overflow-y: scroll;
+        overflow-x: visible;
+    }
+
+    body {
+        min-width: 320px;
+        line-height: 1.5;
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        font-family: var(--font-roobert);
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: visible;
+    }
+
+    ::selection {
+        background-color: var(--color-selection)
+    }
+}
+
+@layer components {
+    .ContentLayoutRoot {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .ContentLayoutMain {
+      width: 100%;
+      max-width: 40rem;
+      text-wrap: pretty;
+    }
+
+    .BlogLayoutRoot {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: start;
+      justify-content: start;
+      gap: 2rem;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+
+    .BlogLayoutMain {
+      width: 100%;
+      font-size: var(--text-prose);
+      color: var(--color-prose);
+      line-height: var(--text-prose--line-height);
+      letter-spacing: var(--text-base--letter-spacing);
+    }
+
+    .BlogLayoutMain :is(h1, h2, h3, h4, h5, h6) {
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--prose-spacing);
+      color: var(--color-shout);
+    }
+
+    .BlogLayoutMain h1 {
+      font-size: var(--text-xl);
+      line-height: var(--text-xl--line-height);
+      letter-spacing: var(--text-xl--letter-spacing);
+    }
+
+    .BlogLayoutMain h2 {
+      font-size: var(--text-lg);
+      line-height: var(--text-lg--line-height);
+      letter-spacing: var(--text-lg--letter-spacing);
+    }
+
+    .BlogLayoutMain h3 {
+      font-size: var(--text-base);
+      line-height: var(--text-base--line-height);
+      letter-spacing: var(--text-base--letter-spacing);
+    }
+
+    .BlogLayoutMain p {
+      margin-top: var(--prose-spacing);
+    }
+
+    .BlogLayoutMain strong {
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-shout);
+    }
+
+    .BlogLayoutMain ul {
+      list-style-type: none;
+      padding-left: var(--list-inset);
+      counter-reset: prose-ul 0;
+      margin-top: 8px;
+    }
+
+    .BlogLayoutMain ul li {
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .BlogLayoutMain ul li::before {
+      content: counter(prose-ul, disc);
+      min-width: var(--list-inset);
+      text-align: center;
+      position: absolute;
+      right: calc(100% + 0.0625 * var(--list-inset));
+    }
+
+    .BlogLayoutMain .parens {
+      color: var(--color-muted);
+    }
+
+    .BlogLayoutMain a {
+      line-height: var(--text-base--line-height);
+      letter-spacing: var(--text-base--letter-spacing);
+    }
+
+    .BlogLayoutMain a:hover {
+      text-decoration: underline;
+    }
+
+    .BlogLayoutMain a:active {
+      text-decoration: underline;
+    }
+
+    .BlogLayoutMain a:visited {
+      text-decoration: underline;
+    }
+  
+    .RootLayout {
+      z-index: 0;
+      position: relative;
+      --root-layout-padding-x: 0rem;
+      padding-inline: var(--root-layout-padding-x);
+  
+      @media (min-width: 64rem) {
+        --root-layout-padding-x: 3rem;
+      }
+    }
+  
+    .RootLayoutContainer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-inline: auto;
+      min-height: 100dvh;
+      max-width: calc(
+        var(--breakpoint-xl) - var(--root-layout-padding-x) * 2
+      );
+  
+      @media (min-width: 64rem) {
+        padding-block: var(--header-height);
+        padding-bottom: 0;
+  
+        /* Striped gutters extending outward from container */
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 50vw; /* half viewport width should be enough */
+          background: repeating-linear-gradient(
+            45deg,
+            var(--color-gridline) 0px,
+            var(--color-gridline) 0.5px,
+            transparent 1px,
+            transparent 8px
+          );
+          opacity: 0.5;
+          pointer-events: none;
+          z-index: -1;
+        }
+  
+        /* Left gutter */
+        &::before {
+          right: 100%; /* extend leftward from container edge */
+        }
+  
+        /* Right gutter */
+        &::after {
+          left: 100%; /* extend rightward from container edge */
+        }
+      }
+    }
+  
+    .RootLayoutContent {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+  
+      @media (min-width: 64rem) {
+        /* 1px grid lines at container edges */
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background-color: var(--color-gridline);
+        }
+  
+        &::before {
+          left: 0;
+          margin-left: -1px;
+        }
+  
+        &::after {
+          right: 0;
+          margin-right: -1px;
+        }
+      }
+    }
+  }
+
+@font-face {
+    font-family: 'Roobert';
+    src: url('/fonts/RoobertTRIAL-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roobert';
+    src: url('/fonts/RoobertTRIAL-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roobert';
+    src: url('/fonts/RoobertTRIAL-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roobert';
+    src: url('/fonts/RoobertTRIAL-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('/fonts/GeistMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+

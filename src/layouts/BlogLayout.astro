@@ -1,0 +1,14 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+---
+
+<Layout>
+    <div class="BlogLayoutRoot">
+        <Header />
+        <a href="/thoughts" class="font-medium text-muted">← Back</a>
+        <div class="BlogLayoutMain">
+            <slot />
+        </div>
+    </div>
+</Layout>
