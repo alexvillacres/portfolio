@@ -1,17 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CheckerLogo from '../components/CheckerLogo.astro';
 ---
 
 <Layout>
     <div class="ContentLayoutRoot">
-        <Header />
         <div class="ContentLayoutMain">
+            <CheckerLogo href="/" transition:name="checker" />
             <div class="ContentLayoutMain">
-                <h1 class="text-xl font-medium text-loud">Beyond Webflow: Choosing the Slower Path</h1>
-                <p class="text-base mb-2">Two years ago I built an illustrator’s portfolio in a day, last weekend we did it again.</p>
-                <a href="/thoughts/slowing-down"class="text-blue font-medium underline underline-offset-2">Read for 2 minutes</a>
+                <h1 class="text-lg font-medium text-loud mb-4">Thoughts</h1>
+                <div class="flex flex-col gap-4">
+                    <a href="/thoughts/slowing-down" class="flex flex-col -mx-3 p-3 hover:bg-gray-100 rounded-lg">
+                        <h1 class="text-lg font-medium text-loud">Beyond Webflow: Choosing the Slower Path</h1>
+                        <p class="text-base">Why Webflow developers should clack away in an IDE</p>
+                    </a>
+                    <a href="/thoughts/slowing-down" class="flex flex-col -mx-3 p-3 hover:bg-gray-100 rounded-lg">
+                        <h1 class="text-lg font-medium text-loud">Beyond Webflow: Choosing the Slower Path</h1>
+                        <p class="text-base">Why Webflow developers should clack away in an IDE</p>
+                    </a>
+                    <a href="/thoughts/slowing-down" class="flex flex-col -mx-3 p-3 hover:bg-gray-100 rounded-lg">
+                        <h1 class="text-lg font-medium text-loud">Beyond Webflow: Choosing the Slower Path</h1>
+                        <p class="text-base">Why Webflow developers should clack away in an IDE</p>
+                    </a>
+                </div>
             </div>
         </div>
+        <Footer />
     </div>
 </Layout>

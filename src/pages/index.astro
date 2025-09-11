@@ -3,19 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import framerLogo from '../assets/framer.svg';
 import webflowLogo from '../assets/webflow.svg';
 import Image from 'astro/components/Image.astro';
-import Header from '../components/Header.astro';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CheckerLogo from '../components/CheckerLogo.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
 	<div class="ContentLayoutRoot">
-		<Header />
 		<div class="ContentLayoutMain">
-			<h1 class="text-xl font-medium text-loud mb-2"><span class="text-muted">I’m Alex.</span> I’m a designer with a curiosity for exploring the depths engineering.</h1>
-			<p class="text-base mb-2">I’m journeying into the void of design engineering, a new (and infamously confusing) field that has designers not only craft interfaces, but understand how they tick.</p>
+			<CheckerLogo href="/" />
+			<h1 class="text-xl font-medium text-loud mb-2"><span class="text-muted">I’m Alex.</span> I’m a generalist designer with a curiosity for what lies beneath the UI.</h1>
+			<p class="mb-2">My journey to becoming a better designer lies within two realms: Experience and Process.</p>
 			<a href="/thoughts"class="block text-blue font-medium underline underline-offset-2">Follow my journey -></a>
-			<div class="block text-base text-muted mt-6 inline-flex items-center">From <span class="inline-flex ml-2 mr-1"><Image src={webflowLogo} alt="Webflow" width={28} height={48} /> </span>only, to code. (and a little bit of <span class="inline-flex ml-2 mr-1"><Image src={framerLogo} alt="Framer" width={16} height={16} /></span>)</div>
+			<div class="block text-muted mt-6 inline-flex items-center">From <span class="inline-flex ml-2 mr-1"><Image src={webflowLogo} alt="Webflow" width={28} height={48} /> </span>only, to<code class="">code</code>. (and a little bit of <span class="inline-flex ml-2 mr-1"><Image src={framerLogo} alt="Framer" width={16} height={16} /></span>)</div>
 		</div>
+		<Footer />
 	</div>
 </Layout>

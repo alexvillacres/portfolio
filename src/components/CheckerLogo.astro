@@ -1,0 +1,95 @@
+---
+const { href = "/", label = "Home" } = Astro.props;
+---
+
+<a class="checker-logo" href={href} aria-label={label} transition:name="checker"/>
+
+<style>
+  :root {
+    --mx: 0; /* -1..1, set by JS */
+    --my: 0;
+  }
+
+  .checker-logo {
+    /* base settings */
+    --size: 32px;
+    --c1: #7aa08c;
+    --c2: #ffffff;
+    --square: 16px;
+    --range: calc(var(--square) * 0.6);
+
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 9999px;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+
+    /* Scale animation */
+    transform: scale(1);
+    transition: transform 160ms cubic-bezier(.2,.8,.2,1);
+
+    /* checker pattern with dynamic offset */
+    background:
+      repeating-conic-gradient(var(--c1) 0 25%, var(--c2) 0 50%)
+      calc(var(--mx) * var(--range))
+      calc(var(--my) * var(--range))
+      / var(--square) var(--square);
+
+    /* depth */
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.12),
+      0 1px 2px rgba(0,0,0,.06),
+      inset 0 -1px 1px rgba(0,0,0,.12),
+      inset 0 -1px 4px rgba(0,0,0,.36),
+      inset 0 1px 3px rgba(255,255,255,.5),
+      inset 0 1px 6px rgba(255,255,255,.8);
+  }
+
+  /* Accessibility: keyboard focus = hover scale */
+  .checker-logo:focus-visible {
+    outline: none;
+    transform: scale(1.2);
+  }
+
+  @media (hover:hover) and (pointer:fine) {
+    .checker-logo:hover {
+      transform: scale(1.2);  /* Hover ≈ 1.28 */
+    }
+    .checker-logo:active {
+      transition-duration: 90ms;
+      transform: scale(0.9);  /* Down ≈ 0.83 */
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .checker-logo { transition: none; }
+  }
+</style>
+
+<script is:inline>
+  // Run once per visit to update --mx/--my globally
+  if (!window.__checkerParallax) {
+    window.__checkerParallax = (() => {
+      const ok = matchMedia('(hover:hover) and (pointer:fine)').matches;
+      if (!ok) return;
+
+      let tx = 0, ty = 0, cx = 0, cy = 0;
+      function tick() {
+        cx += (tx - cx) * 0.12;
+        cy += (ty - cy) * 0.12;
+        const s = document.documentElement.style;
+        s.setProperty('--mx', cx.toFixed(4));
+        s.setProperty('--my', cy.toFixed(4));
+        requestAnimationFrame(tick);
+      }
+      addEventListener('pointermove', e => {
+        tx = (e.clientX / innerWidth)  * 2 - 1;
+        ty = (e.clientY / innerHeight) * 2 - 1;
+      });
+      addEventListener('mouseleave', () => { tx = 0; ty = 0; });
+      tick();
+    })();
+  }
+</script>

@@ -19,12 +19,12 @@
     --breakpoint-max-layout-width: 89rem;
 
     --spacing: .25rem;
-    --prose-spacing: 1rem;
+    --prose-spacing: 1.5rem;
     --text-xs: .8125rem;
     --text-xs--line-height: 1.25rem;
     --text-sm: .875rem;
     --text-sm--line-height: 1.25rem;
-    --text-base: 1rem;
+    --text-base: 1.0625rem;
     --text-base--line-height: 1.5rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: 1.75rem;
@@ -50,22 +50,36 @@
     --breakpoint-max-layout-width: 89rem;
     --color-white: white;
     --color-black: black;
-    --color-gray-50: oklch(98% .001 264);
-    --color-gray-75: oklch(97% .0013 264);
-    --color-gray-100: oklch(12% .038 264/.05);
-    --color-gray-200: oklch(12% .036 264/.07);
-    --color-gray-300: oklch(12% .034 264/.17);
-    --color-gray-400: oklch(12% .032 264/.38);
-    --color-gray-500: oklch(12% .03 264/.5);
-    --color-gray-600: oklch(12% .028 264/.67);
-    --color-gray-700: oklch(12% .024 264/.77);
-    --color-gray-800: oklch(12% .02 264/.85);
-    --color-gray-900: oklch(12% .02 264/.9);
-    --color-gray-950: oklch(12% .02 264/.95);
+    --color-gray-50: oklch(0.9938 .0013 106);
+    --color-gray-75: oklch(0.9818 .0013 106);
+    --color-gray-100: oklch(0.9556 .0017 68);
+    --color-gray-200: oklch(0.9335 .0027 106);
+    --color-gray-300: oklch(0.9097 .0042 91);
+    --color-gray-400: oklch(0.8852 .0042 91);
+    --color-gray-500: oklch(0.8511 .0056 95);
+    --color-gray-600: oklch(0.7911 .0084 99);
+    --color-gray-700: oklch(0.6413 .0102 107);
+    --color-gray-800: oklch(0.6048 .0089 107);
+    --color-gray-900: oklch(0.4981 .0078 107);
+    --color-gray-925: oklch(0.339 .0085 104);
+    --color-gray-950: oklch(0.2431 .0076 95);
+    --color-terracotta-50: oklch(0.979 .0111 46);
+    --color-terracotta-75: oklch(0.9563 .0228 41);
+    --color-terracotta-100: oklch(0.9358 .034361 43);
+    --color-terracotta-200: oklch(0.8943 .0572 38);
+    --color-terracotta-300: oklch(0.86 .078061 38);
+    --color-terracotta-400: oklch(0.8332 .095 37);
+    --color-terracotta-500: oklch(0.7593 .1014 38);
+    --color-terracotta-600: oklch(0.7135 .0959 36);
+    --color-terracotta-700: oklch(0.6607 .0807 37);
+    --color-terracotta-800: oklch(0.5981 .101 37);
+    --color-terracotta-900: oklch(0.4434 .0821 37);
+    --color-terracotta-925: oklch(0.3489 .0246 38);
+    --color-terracotta-950: oklch(0.2353 .0132 34);
     --color-blue-800: var(--color-blue);
     --color-red-800: var(--color-red);
     --color-content: white;
-    --color-background: var(--color-white);
+    --color-background: var(--color-gray-50);
     --color-foreground: var(--color-gray-900);
     --color-popup: white;
     --color-gridline: oklch(91.6% .004 264);
@@ -94,11 +108,11 @@
     --ease-in-slow: cubic-bezier(.375,.015,.545,.455);
 
     --color-shout: var(--color-gray-950);
-    --color-loud: var(--color-gray-700);
-    --color-base: var(--color-gray-500);
-    --color-muted: var(--color-gray-400);
-    --color-faint: var(--color-gray-300);
-    --color-prose: oklch(12% .03 264/.6);
+    --color-loud: var(--color-gray-925);
+    --color-base: var(--color-gray-900);
+    --color-muted: var(--color-gray-600);
+    --color-faint: var(--color-gray-400);
+    --color-prose: var(--color-base);
 
     --list-inset: 24px;
     --text-prose: 1.0625rem;
@@ -106,27 +120,39 @@
 }
 
 @layer base {
+    :root { --mx: 0; --my: 0; }
     html {
         color-scheme: light dark;
         word-break: break-word;
         overflow-y: scroll;
-        overflow-x: visible;
+        overflow-x: clip;
     }
 
     body {
         min-width: 320px;
         line-height: 1.5;
+        font-size: var(--text-base);
         background-color: var(--color-background);
         color: var(--color-foreground);
         font-family: var(--font-roobert);
         font-synthesis: none;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: visible;
+        overflow-x: clip;
     }
 
     ::selection {
         background-color: var(--color-selection)
+    }
+
+    code {
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+        background-color: var(--color-terracotta-75);
+        padding: 0rem 0.25rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-terracotta-100);
+        color: var(--color-terracotta-800);
     }
 }
 

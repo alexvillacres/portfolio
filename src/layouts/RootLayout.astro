@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import CheckerLogo from '../components/CheckerLogo.astro';
+const { bodyClass = "" } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class={bodyClass}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
+    <style is:global>
+      /* defaults for parallax vars so background-position calc is valid */
+      :root { --mx: 0; --my: 0; }
+    </style>
+  </head>
+  <body>
+    <!-- ONE persisted logo for the whole site -->
+    <CheckerLogo transition:persist="checker" href="/" />
+
+    <!-- Your normal page content slot -->
+    <slot />
+  </body>
+</html>
