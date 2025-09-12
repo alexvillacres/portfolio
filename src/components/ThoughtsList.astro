@@ -1,0 +1,30 @@
+---
+// Dynamically import all MDX files from the thoughts directory
+const thoughtPosts = await Astro.glob('../pages/thoughts/*.mdx');
+
+// Transform the imported posts into the format we need
+const thoughts = thoughtPosts.map((post) => {
+    // Extract the slug from the file path
+    const slug = post.file.split('/').pop()?.replace('.mdx', '') || '';
+    
+    return {
+        title: post.frontmatter.title,
+        description: post.frontmatter.description,
+        href: `/thoughts/${slug}`,
+        author: post.frontmatter.author,
+        tags: post.frontmatter.tags || [],
+    };
+}).sort((a, b) => {
+    // Sort by title for now - you could add a date field to sort chronologically
+    return a.title.localeCompare(b.title);
+});
+---
+
+<div class="flex flex-col gap-4">
+    {thoughts.map((thought) => (
+        <a href={thought.href} class="flex flex-col -mx-3 p-3 hover:bg-gray-100 rounded-lg">
+            <h1 class="text-lg font-medium text-loud">{thought.title}</h1>
+            <p class="text-base">{thought.description}</p>
+        </a>
+    ))}
+</div>

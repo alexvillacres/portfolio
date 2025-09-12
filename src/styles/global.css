@@ -110,9 +110,9 @@
     --color-shout: var(--color-gray-950);
     --color-loud: var(--color-gray-925);
     --color-base: var(--color-gray-900);
-    --color-muted: var(--color-gray-600);
-    --color-faint: var(--color-gray-400);
-    --color-prose: var(--color-base);
+    --color-muted: var(--color-gray-700);
+    --color-faint: var(--color-gray-600);
+    --color-prose: var(--color-gray-800);
 
     --list-inset: 24px;
     --text-prose: 1.0625rem;
@@ -154,6 +154,9 @@
         border: 1px solid var(--color-terracotta-100);
         color: var(--color-terracotta-800);
     }
+    
+    a[href] { cursor: pointer; }
+    a[href] * { cursor: inherit; }   
 }
 
 @layer components {
@@ -194,26 +197,28 @@
 
     .BlogLayoutMain :is(h1, h2, h3, h4, h5, h6) {
       font-weight: var(--font-weight-medium);
-      margin-bottom: var(--prose-spacing);
       color: var(--color-shout);
     }
 
     .BlogLayoutMain h1 {
-      font-size: var(--text-xl);
+      font-size: var(--text-2xl);
       line-height: var(--text-xl--line-height);
       letter-spacing: var(--text-xl--letter-spacing);
+      margin-bottom: var(--prose-spacing);
     }
 
     .BlogLayoutMain h2 {
-      font-size: var(--text-lg);
+      font-size: var(--text-xl);
       line-height: var(--text-lg--line-height);
       letter-spacing: var(--text-lg--letter-spacing);
+      margin-top: 3rem;
     }
 
     .BlogLayoutMain h3 {
-      font-size: var(--text-base);
+      font-size: var(--text-xl);
       line-height: var(--text-base--line-height);
       letter-spacing: var(--text-base--letter-spacing);
+      margin-top: var(--prose-spacing);
     }
 
     .BlogLayoutMain p {
@@ -245,26 +250,25 @@
       right: calc(100% + 0.0625 * var(--list-inset));
     }
 
-    .BlogLayoutMain .parens {
-      color: var(--color-muted);
+    .BlogLayoutMain span.parens {
+      color: var(--color-faint);
     }
 
     .BlogLayoutMain a {
       line-height: var(--text-base--line-height);
       letter-spacing: var(--text-base--letter-spacing);
+      color: var(--color-shout);
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--color-faint);
+      transition: text-decoration-color 0.15s ease-out;
     }
 
     .BlogLayoutMain a:hover {
-      text-decoration: underline;
+      text-decoration-color: var(--color-loud);
     }
 
-    .BlogLayoutMain a:active {
-      text-decoration: underline;
-    }
-
-    .BlogLayoutMain a:visited {
-      text-decoration: underline;
-    }
   
     .RootLayout {
       z-index: 0;

@@ -5,6 +5,8 @@ layout: ../../layouts/BlogLayout.astro
 description: 'This is the first post of my new Astro blog.'
 tags: ["webflow", "astro", "inconvenience"]
 ---
+import QuoteBlock from '../../components/QuoteBlock.astro'
+import OliverBurkeman from '../../assets/oliver-burkeman.png';
 
 # Beyond Webflow: Choosing the Slower Path
 Two years ago, one particular weekend my girlfriend and I we’re keen on hitting the design-gym to get our Figma reps in, as designers do.
@@ -29,7 +31,7 @@ So I decided to move away from Webflow, where it previously resided, and build i
 
 What I found was my Webflow skills did, in fact, transfer to the basics of creating static websites. But more than that, the feeling of making changes to the actual code, managing versions via git, and running builds felt *raw* and *true* to the craft that is development. It was **analog**.
 
-Hours go by, furiously tabbing back and forth between Figma and Cursor, while the kicks and snares of Moodyman keep us in stride. Early morning, the next day around 02:00, we would finally hit “publish”.
+Hours go by, furiously tabbing back and forth between Figma and Cursor, while the kicks and snares of <a class="cursor-pointer" href="https://www.moodymann.com/">Moodymann</a> keep us in stride. Early morning, the next day around 02:00, we would finally hit “publish”.
 
 Of course, it was *slower*. I had to troll through the documentation. I learned about the importance of version control—something Webflow’s lack thereof hadn’t taught me. I began to understand when and when **not** to use components, and why they are so powerful.
 
@@ -45,9 +47,9 @@ Webflow makes website maintenance and creation fast and **convenient**.
 
 Whilst convenience and speed is powerful, I’d argue that if you want to understand and create something meaningful, human even, choosing a slow, perhaps inconvenient path could be best.
 
-Oliver Burkeman, the author of Four Thousand Weeks, paints this picture clearly, as he describes the scenario of a hand-written birthday card versus using a mailer service to print and send the card for you:
+<a href="https://www.oliverburkeman.com/">Oliver Burkeman</a>, the author of <a href="https://www.oliverburkeman.com/fourthousandweeks">Four Thousand Weeks</a>, paints this picture clearly, as he describes the scenario of a hand-written birthday card versus using a mailer service to print and send the card for you:
 
-“...It really isn’t the thought that counts, but the effort—which is to say the inconvenience. When you render the process convenient, you drain it of its meaning.”
+<QuoteBlock href="https://example.com/four-thousand-weeks" author="Oliver Burkeman" avatar={OliverBurkeman} pill1="Four Thousand Weeks" pill2="page 53">“...It really isn’t the thought that counts, but the effort—which is to say the inconvenience. When you render the process convenient, you drain it of its meaning.”</QuoteBlock>
 
 Now, I don’t want to sit here and chastise folks who want to build and ship quickly. But if you’ve made it a habit to default to the easier more convenient route, you might be belittling the meaning of that experience and the output that comes of it.
 
