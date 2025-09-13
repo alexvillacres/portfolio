@@ -20,7 +20,7 @@ const thoughts = thoughtPosts.map((post) => {
 });
 ---
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
     {thoughts.map((thought) => (
         <a href={thought.href} class="flex flex-col -mx-3 p-3 hover:bg-gray-100 rounded-lg">
             <h1 class="text-lg font-medium text-loud">{thought.title}</h1>
