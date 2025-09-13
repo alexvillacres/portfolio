@@ -206,6 +206,13 @@
       max-width: 40rem;
     }
 
+    @media screen and (max-width: 40rem) {
+      .BlogLayoutRoot {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+
     .BlogLayoutMain {
       width: 100%;
       font-size: var(--text-prose);
