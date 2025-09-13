@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+const {
+  author = '',
+  website = '',
+  avatar = '',
+  pill1 = '',
+  link1 = '',
+} = Astro.props;
+---
+
+<figure class="flex flex-col p-4 my-10 -m-4 rounded-xl bg-gray-75 border border-gray-200 gap-2">
+    <figcaption class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+        {avatar && <Image src={avatar} alt="" class="w-6 h-6 rounded-full border border-gray-200" loading="lazy" />}
+        {website ?(
+            <a href={website} class="text-muted text-md hover:text-shout transition-colors no-underline" target="_blank" rel="noopener noreferrer">{author}</a>
+        ) : (
+            <span class="text-muted text-md">{author}</span>
+        )}
+        </div>
+        <div class="">
+        {pill1 && (
+            link1 ? (
+                <a href={link1} class="text-xs text-muted px-2 py-1 rounded-sm bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-colors no-underline" target="_blank" rel="noopener noreferrer">
+                    {pill1}
+                </a>
+            ) : (
+                <span class="text-xs text-muted px-2 py-1 rounded-sm bg-gray-100 border border-gray-200">{pill1}</span>
+            )
+        )}
+        </div>
+    </figcaption>
+
+    <blockquote class="text-base">
+        <slot />
+    </blockquote>
+</figure>

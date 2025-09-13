@@ -1,0 +1,8 @@
+---
+const { title, description, href, image } = Astro.props;
+---
+
+
+<a href={href} data-preview-trigger={title} data-preview-description={description} data-preview-image={image?.src} aria-describedby="data-preview-card" class="inline">
+    <slot />
+</a>

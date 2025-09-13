@@ -5,11 +5,14 @@ layout: ../../layouts/BlogLayout.astro
 description: 'This is the first post of my new Astro blog.'
 tags: ["webflow", "astro", "inconvenience"]
 ---
-import QuoteBlock from '../../components/QuoteBlock.astro'
+import BlockQuote from '../../components/BlockQuote.astro';
 import OliverBurkeman from '../../assets/oliver-burkeman.png';
+import Moodymann from '../../assets/moodymann.png';
+import fourThousandWeeks from '../../assets/four-thousand-weeks.png';
+import PreviewCard from '../../components/PreviewCard.astro';
 
 # Beyond Webflow: Choosing the Slower Path
-Two years ago, one particular weekend my girlfriend and I we’re keen on hitting the design-gym to get our Figma reps in, as designers do.
+Two years ago, one particular weekend my girlfriend and I we’re keen on hitting the design-gym to get our <a href="https://www.figma.com/">Figma</a> reps in, as designers do.
 
 So, instead of defaulting to the typical Saturday night that folks in their mid-20’s would get into; unintelligible bar conversations over blaring EDM. We decided to keep the party on the living room floor and focus on one thing: Design <span class="parens">(and a little house music)</span>.
 
@@ -25,13 +28,13 @@ Initially, my girlfriend was enthusiastic about this 'working' website. But with
 
 Fast forward to today, Maya had an exciting new prospect and wanted to revamp the portfolio. Only this time, I wanted to do something different.
 
-The easy route would be to spin up a new project in Webflow and go on autopilot. But the energy on this particular “design day” inspired me to do something different. Instead of clicking through Webflow’s UI, I wanted to clack away in an IDE.
+The easy route would be to spin up a new project in <a href="https://webflow.com/">Webflow</a> and go on autopilot. But the energy on this particular “design day” inspired me to do something different. Instead of clicking through Webflow’s UI, I wanted to clack away in an IDE.
 
-So I decided to move away from Webflow, where it previously resided, and build it from scratch <span class="parens">(with a little help from Astro)</span>.
+So I decided to move away from Webflow, where it previously resided, and build it from scratch <span class="parens">(with a little help from <a href="https://astro.build/">Astro</a>)</span>.
 
 What I found was my Webflow skills did, in fact, transfer to the basics of creating static websites. But more than that, the feeling of making changes to the actual code, managing versions via git, and running builds felt *raw* and *true* to the craft that is development. It was **analog**.
 
-Hours go by, furiously tabbing back and forth between Figma and Cursor, while the kicks and snares of <a class="cursor-pointer" href="https://www.moodymann.com/">Moodymann</a> keep us in stride. Early morning, the next day around 02:00, we would finally hit “publish”.
+Hours go by, furiously tabbing back and forth between Figma and <a href="https://cursor.com/ ">Cursor</a>, while the kicks and snares of <PreviewCard title="moodymann" image={Moodymann} description="Moodymann is a Detroit DJ and producer fusing house, funk, soul, and jazz." href="https://www.moodymann.com/">Moodymann</PreviewCard> keep us in stride. Early morning, the next day around 02:00, we would finally hit “publish”.
 
 Of course, it was *slower*. I had to troll through the documentation. I learned about the importance of version control—something Webflow’s lack thereof hadn’t taught me. I began to understand when and when **not** to use components, and why they are so powerful.
 
@@ -45,11 +48,11 @@ Let’s put it this way... Webflow’s value proposition is clear:
 
 Webflow makes website maintenance and creation fast and **convenient**.
 
-Whilst convenience and speed is powerful, I’d argue that if you want to understand and create something meaningful, human even, choosing a slow, perhaps inconvenient path could be best.
+Whilst convenience and speed is powerful, I'd argue that if you want to understand and create something meaningful, human even, choosing a slow, perhaps inconvenient path could be best.
 
-<a href="https://www.oliverburkeman.com/">Oliver Burkeman</a>, the author of <a href="https://www.oliverburkeman.com/fourthousandweeks">Four Thousand Weeks</a>, paints this picture clearly, as he describes the scenario of a hand-written birthday card versus using a mailer service to print and send the card for you:
+In <PreviewCard title="Four Thousand Weeks" image={fourThousandWeeks} description="Four Thousand Weeks is a book about using our limited time wisely and focusing on what matters." href="https://www.oliverburkeman.com/fourthousandweeks">Four Thousand Weeks</PreviewCard>, <PreviewCard title="Oliver Burkeman" image={OliverBurkeman} description="Oliver Burkeman is a world renouned author who explores the intersection of spirituality within a mortal context" href="https://www.oliverburkeman.com/">Oliver Burkeman</PreviewCard>, paints this picture clearly, as he describes the scenario of a hand-written birthday card versus using a mailer service to print and send the card for you:
 
-<QuoteBlock href="https://example.com/four-thousand-weeks" author="Oliver Burkeman" avatar={OliverBurkeman} pill1="Four Thousand Weeks" pill2="page 53">“...It really isn’t the thought that counts, but the effort—which is to say the inconvenience. When you render the process convenient, you drain it of its meaning.”</QuoteBlock>
+<BlockQuote website="https://www.oliverburkeman.com/" author="Oliver Burkeman" avatar={OliverBurkeman} link1="https://www.oliverburkeman.com/fourthousandweeks" pill1="Four Thousand Weeks">“...It really isn’t the thought that counts, but the effort—which is to say the inconvenience. When you render the process convenient, you drain it of its meaning.”</BlockQuote>
 
 Now, I don’t want to sit here and chastise folks who want to build and ship quickly. But if you’ve made it a habit to default to the easier more convenient route, you might be belittling the meaning of that experience and the output that comes of it.
 

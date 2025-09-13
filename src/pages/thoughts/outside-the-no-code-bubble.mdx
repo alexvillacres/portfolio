@@ -5,7 +5,8 @@ layout: ../../layouts/BlogLayout.astro
 description: 'If you are Webflow Developer, look outside of the No-Code bubble'
 tags: ["webflow", "finsweet", "development community"]
 ---
-
+import BlockQuote from '../../components/BlockQuote.astro';
+import Shane from '../../assets/shane-waking-digital.png';
 
 # Why you should look outside the No-Code bubble
 Webflow's community is amazing... until it isn't. While there are so many leaders in the  no-code space, relying solely on that bubble could be holding you back.
@@ -16,7 +17,7 @@ This is usually how it goes:
 
 "I want to track analytics on the website and the Ad team I hired is insistent on Google's suite of analytics tools. They said that we'll have to manage consent through a Cookie Consent management tool — can you do that?"
 
-"Of course! 🙃". (Me thinking about all of the GDPR Compliant alternatives like Plausible and Fathom)
+"Of course! 🙃". <span class="parens">(Me thinking about all of the GDPR Compliant alternatives like <a href="https://plausible.io/">Plausible</a> and <a href="https://usefathom.com/">Fathom</a>)</span>
 
 As Webflow developers, we sometimes find ourselves trapped in a cycle of seeking solutions within the community. While, like most things in life, opening up your pool of information and experience is typically where you'll find answers.
 
@@ -34,17 +35,11 @@ Checking Webflow Apps to see if there is a new solution. (Spoiler alert: there r
 
 Webflow forums: Scouring for a custom-built alternative. (Usually, I find an outdated solution or unanswered question).
 
-Finsweet's Cookie Consent: The end all be all.
+<a href="https://finsweet.com/cookie-consent">Finsweet's Cookie Consent</a>: The end all be all.
 
 Don't get me wrong, the team at Finsweet have empowered the community probably the most out of any other org. But I think Shane from Walking Digital has summed up a lot of our feelings in this tweet:
 
-The Finsweet Components Cookie Consent has got to be one of the worst experiences ever.
-
-Literally done with it.
-
-It cannot be trusted.
-
-Add it to staging and it breaks in production. Has made us look bad now twice with clients.
+<BlockQuote avatar={Shane} author="Shane from Waking Digital" link1="https://x.com/digitalshane_" pill1="@digitalshane_" website="https://www.wakingdigital.com/"><p>The Finsweet Components Cookie Consent has got to be one of the worst experiences ever.</p><p>Literally done with it.</p><p>It cannot be trusted.</p><p>Add it to staging and it breaks in production. Has made us look bad now twice with clients.</p></BlockQuote>
 
 Along with the replies, I'm right there with Shane. Why is the community still reaching for this solution, despite its flaws?
 
@@ -60,7 +55,7 @@ Instantly, I'm seeing several reddit posts that are all Free and Open Source sol
 
 I don't know about you, but Github can be a scary place for us Webflow developers. But it doesn't have to be. With some intention and curiosity, Github is probably one of the most valuable resources for a Webflow developer.
 
-A reddit post lead me to Orest Bida, an Italian freelance website designer with 35 followers on twitter (This should be higher). Orest authored cookieconsent that has 4,000+ stars on Github that solved my exact issue.
+A reddit post lead me to <a href="https://orestbida.com/">Orest Bida</a>, an Italian freelance website designer with 35 followers on twitter (This should be higher). Orest authored <a href="https://github.com/orestbida/cookieconsent">cookieconsent</a> that has 4,000+ stars on Github that solved my exact issue.
 
 The best part, which you'll typically find is the case on Github, it's completely free.
 
