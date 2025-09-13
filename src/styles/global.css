@@ -78,6 +78,8 @@
     --color-terracotta-950: oklch(0.2353 .0132 34);
     --color-blue-800: var(--color-blue);
     --color-red-800: var(--color-red);
+    --color-green-400: oklch(0.7055 0.0609 156.9);
+    --color-green-300: oklch(0.7658 0.0558 155.68)
     --color-content: white;
     --color-background: var(--color-gray-50);
     --color-foreground: var(--color-gray-900);
