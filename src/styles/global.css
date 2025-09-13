@@ -357,6 +357,24 @@
         }
       }
     }
+
+    @media screen and (max-width: 40rem) {
+      .BlogLayoutRoot {
+        padding-inline: 2rem;
+      }
+      .ContentLayoutRoot {
+        padding-inline: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 20rem) {
+      .BlogLayoutRoot {
+        padding-inline: 1rem;
+      }
+      .ContentLayoutRoot {
+        padding-inline: 1rem;
+      }
+    }
   }
 
 @font-face {
