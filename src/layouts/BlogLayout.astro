@@ -11,5 +11,13 @@ import CheckerLogo from "../components/CheckerLogo.astro";
 			<slot />
 		</div>
 		<Footer />
+		<div
+		class="pointer-events-none fixed inset-0 z-10 max-w-[40rem] mx-auto
+			bg-[var(--page-bg,white)]
+			[--edge-fade:linear-gradient(to_bottom,black,transparent_10%,transparent_90%,black)]
+			[-webkit-mask-image:var(--edge-fade)]
+			[mask-image:var(--edge-fade)]
+			[mask-repeat:no-repeat]"
+  		></div>
 	</div>
 </Layout>

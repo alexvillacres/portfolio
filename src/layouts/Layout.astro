@@ -20,5 +20,16 @@ import { ClientRouter } from 'astro:transitions';
 					</div>
 				</div>
 			</div>
+			<script type="module">
+				import { setupPreviewCards } from "/scripts/previewCard.js";
+				if (typeof window !== 'undefined') {
+					// Initial setup
+					setupPreviewCards();
+					
+					// Re-setup on navigation events
+					document.addEventListener('astro:page-load', setupPreviewCards);
+					document.addEventListener('astro:after-swap', setupPreviewCards);
+				}
+			  </script>
 		</body>
 	</html>
